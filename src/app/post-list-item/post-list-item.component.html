@@ -1,9 +1,11 @@
-<div class="box" [ngClass]="{'bg-success': postItem.loveIts > 0, 'bg-danger': postItem.loveIts < 0}">
+<li class="list-group-item"
+    [ngClass]="{'list-group-item-success': postItem.loveIts > 0, 'list-group-item-danger': postItem.loveIts < 0}">
   <p class="text-muted">{{postItem.created_at | date: 'short'}}</p>
   <h2>{{postItem.title}}</h2>
   <p>{{postItem.content}}</p>
   <div class="votes">
     <button (click)="onLoveIt()" type="button" class="btn btn-sm btn-success">Love it</button>
     <button (click)="onDontLoveIt()" type="button" class="btn btn-sm btn-danger">Don't love it</button>
+    <span style="float: right" class="badge">{{postItem.loveIts}}</span>
   </div>
-</div>
+</li>
